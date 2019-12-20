@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/semantic.min.css"/>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+    <script src="/jquery.min.js"></script>
+    <script src="/semantic.min.js"></script>
+    <title>Проект</title>
+</head>
+<body style="padding-top: 20px">
+<!--Шапка-->
+<div class="ui inverted stackable top fixed menu">
+
+    <a class="red item">Новости</a>
+    <a class="red item">О нас</a>
+    <a class="right active red item">Авторизация</a>
+</div>
+
+
+
+<div class="ui equal width grid">
+    <div class="column">
+    </div>
+
+    <!--Авторизация-->
+    <div class="four wide column">
+        <div class="ui container segment">
+            <div class="ui icon header"><i class="red icon list alternate"></i></i> Авторизируйтесь для начала работы</div>
+
+            <div class="ui">
+
+                <!--Блок входа-->
+                <form class="ui form" action="/auth"  method="post" >
+
+
+                    <div class="field">
+                        <label class="ui inverted">Логин</label>
+                        <div class="ui left icon input">
+                            <input type="text" name="userName" placeholder="Логин" required>
+                            <i class="user icon"></i>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Пароль</label>
+                        <div class="ui left icon input">
+                            <input type="password" name="password" placeholder="Пароль" required>
+                            <i class="lock icon"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="ui animated button basic teal fluid" tabindex="0">
+                        <div class="visible content">Вход</div>
+                        <div class="hidden content">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    </button>
+                </form>
+
+                <!--Линия разделения-->
+                <div class="ui horizontal divider"> <i class="angle down red icon"></i> </div>
+
+                <!--Блок регистрации-->
+                <div class="middle aligned column">
+                    <a class="ui animated button basic teal fluid" href="/reg" tabindex="0">
+                        <div class="visible content">Регистрация</div>
+                        <div class="hidden content">
+                            <i class="right arrow icon"></i>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="column">
+    </div>
+</div>
+<?php include_once 'footer.html' ?>
+</body>
+
+<script>
+    $('.message .close')
+        .on('click', function() {
+            $(this)
+                .closest('.message')
+                .transition('fade')
+            ;
+        })
+    ;
+</script>
+</html>
