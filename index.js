@@ -47,7 +47,7 @@ app.post("/reg", urlencodedParser, function(req, res) {
         res.redirect("/teacher/");
         break;
       default:
-        res.send(`${req.body.userName} - ${req.body.userAge}`);
+        res.redirect("/");
     }
   });
 });
@@ -55,7 +55,7 @@ app.post("/reg", urlencodedParser, function(req, res) {
 app.post("/auth", urlencodedParser, function(req, res) {
   if (!req.body) return response.sendStatus(400);
   postForm(req.body).then(() => {
-    switch ("STUDENT") {
+    switch (req.body.userName) {
       case "STUDENT":
         res.cookie("id", "student_id");
         res.cookie("role", "STUDENT");
@@ -67,7 +67,7 @@ app.post("/auth", urlencodedParser, function(req, res) {
         res.redirect("/teacher/");
         break;
       default:
-        res.send(`${req.body.userName} - ${req.body.userAge}`);
+        res.redirect("/");
     }
   });
 });
