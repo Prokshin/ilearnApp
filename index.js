@@ -27,7 +27,7 @@ app.use(cookieParser());
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/auth.html"));
 });
-
+//gg
 app.get("/reg", (req, res) => {
   res.sendFile(path.join(__dirname + "/public/reg.html"));
 });
